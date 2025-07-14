@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch Web Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <h1>Stopwatch Timer</h1>
+            <p>Accurate time measurement with lap tracking</p>
+        </header>
+
+        <main class="stopwatch-container">
+            <!-- Display Utama -->
+            <div class="display-section">
+                <div class="time-display" id="timeDisplay">
+                    <span class="time-part hours" id="hours">00</span>
+                    <span class="separator">:</span>
+                    <span class="time-part minutes" id="minutes">00</span>
+                    <span class="separator">:</span>
+                    <span class="time-part seconds" id="seconds">00</span>
+                    <span class="separator">.</span>
+                    <span class="time-part milliseconds" id="milliseconds">00</span>
+                </div>
+                
+                <div class="status-indicator" id="statusIndicator">
+                    <div class="status-dot"></div>
+                    <span class="status-text">Ready</span>
+                </div>
+            </div>
+
+            <!-- Kontrol Buttons -->
+            <div class="controls-section">
+                <button class="btn btn-start" id="startBtn">
+                    <span class="btn-icon">▶</span>
+                    <span class="btn-text">Start</span>
+                </button>
+                
+                <button class="btn btn-pause" id="pauseBtn" disabled>
+                    <span class="btn-icon">⏸</span>
+                    <span class="btn-text">Pause</span>
+                </button>
+                
+                <button class="btn btn-reset" id="resetBtn">
+                    <span class="btn-icon">↻</span>
+                    <span class="btn-text">Reset</span>
+                </button>
+                
+                <button class="btn btn-lap" id="lapBtn" disabled>
+                    <span class="btn-icon">⚑</span>
+                    <span class="btn-text">Lap</span>
+                </button>
+            </div>
+
+            <!-- Lap Times Section -->
+            <div class="lap-section">
+                <div class="lap-header">
+                    <h3>Lap Times</h3>
+                    <button class="btn-clear-laps" id="clearLapsBtn">Clear All</button>
+                </div>
+                
+                <div class="lap-container" id="lapContainer">
+                    <div class="no-laps" id="noLaps">
+                        <span>No lap times recorded yet</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="stats-section" id="statsSection">
+                <h3>Statistics</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-label">Total Laps</span>
+                        <span class="stat-value" id="totalLaps">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Fastest Lap</span>
+                        <span class="stat-value" id="fastestLap">--:--:--</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Slowest Lap</span>
+                        <span class="stat-value" id="slowestLap">--:--:--</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Average Lap</span>
+                        <span class="stat-value" id="averageLap">--:--:--</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <p>&copy; 2025 Stopwatch App - Built with HTML, CSS & JavaScript</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

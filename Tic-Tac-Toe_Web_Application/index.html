@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="game-header">
+            <h1>🎯 Tic-Tac-Toe</h1>
+            <p>Get three in a row to win!</p>
+        </header>
+
+        <!-- Game Mode Selection -->
+        <div class="mode-selection" id="modeSelection">
+            <h2>Choose Game Mode</h2>
+            <div class="mode-buttons">
+                <button class="mode-btn" id="pvpMode">
+                    <div class="mode-icon">👥</div>
+                    <div class="mode-text">
+                        <h3>Player vs Player</h3>
+                        <p>Play with a friend</p>
+                    </div>
+                </button>
+                <button class="mode-btn" id="pvcMode">
+                    <div class="mode-icon">🤖</div>
+                    <div class="mode-text">
+                        <h3>Player vs AI</h3>
+                        <p>Challenge the computer</p>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- AI Difficulty Selection -->
+        <div class="difficulty-selection hidden" id="difficultySelection">
+            <h2>Choose AI Difficulty</h2>
+            <div class="difficulty-buttons">
+                <button class="diff-btn" data-level="easy">
+                    <span class="diff-icon">😊</span>
+                    <span>Easy</span>
+                </button>
+                <button class="diff-btn" data-level="medium">
+                    <span class="diff-icon">😐</span>
+                    <span>Medium</span>
+                </button>
+                <button class="diff-btn" data-level="hard">
+                    <span class="diff-icon">😈</span>
+                    <span>Hard</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Game Area -->
+        <main class="game-area hidden" id="gameArea">
+            <!-- Game Info -->
+            <div class="game-info">
+                <div class="player-info">
+                    <div class="player" id="player1Info">
+                        <div class="player-avatar">❌</div>
+                        <div class="player-details">
+                            <h3 id="player1Name">Player 1</h3>
+                            <div class="score" id="player1Score">0</div>
+                        </div>
+                    </div>
+                    
+                    <div class="vs-indicator">
+                        <span>VS</span>
+                    </div>
+                    
+                    <div class="player" id="player2Info">
+                        <div class="player-avatar">⭕</div>
+                        <div class="player-details">
+                            <h3 id="player2Name">Player 2</h3>
+                            <div class="score" id="player2Score">0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Current Turn -->
+                <div class="turn-indicator">
+                    <span id="turnText">Player 1's Turn</span>
+                    <div class="turn-symbol" id="turnSymbol">❌</div>
+                </div>
+            </div>
+
+            <!-- Game Board -->
+            <div class="game-board" id="gameBoard">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+            </div>
+
+            <!-- Game Status -->
+            <div class="game-status">
+                <div class="status-message" id="statusMessage">Make your move!</div>
+                <div class="game-controls">
+                    <button class="btn btn-secondary" id="resetGame">🔄 Reset Game</button>
+                    <button class="btn btn-primary" id="newGame">🎮 New Game</button>
+                    <button class="btn btn-tertiary" id="changeMode">⚙️ Change Mode</button>
+                </div>
+            </div>
+
+            <!-- Game Stats -->
+            <div class="game-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Games Played</span>
+                    <span class="stat-value" id="gamesPlayed">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Player 1 Wins</span>
+                    <span class="stat-value" id="player1Wins">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Player 2 Wins</span>
+                    <span class="stat-value" id="player2Wins">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Draws</span>
+                    <span class="stat-value" id="draws">0</span>
+                </div>
+            </div>
+        </main>
+
+        <!-- Winner Modal -->
+        <div class="modal hidden" id="winnerModal">
+            <div class="modal-content">
+                <div class="winner-animation">
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                </div>
+                <div class="winner-symbol" id="winnerSymbol">🏆</div>
+                <h2 id="winnerText">Player 1 Wins!</h2>
+                <p id="winnerSubtext">Congratulations on your victory!</p>
+                <div class="modal-buttons">
+                    <button class="btn btn-primary" id="playAgain">🎮 Play Again</button>
+                    <button class="btn btn-secondary" id="backToMenu">🏠 Main Menu</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Rules -->
+        <div class="game-rules">
+            <details>
+                <summary>📋 How to Play</summary>
+                <div class="rules-content">
+                    <ul>
+                        <li>Players take turns placing X's and O's on the grid</li>
+                        <li>First player to get 3 in a row (horizontally, vertically, or diagonally) wins</li>
+                        <li>If all 9 squares are filled and no one has 3 in a row, it's a draw</li>
+                        <li>In AI mode, the computer will make its move automatically</li>
+                        <li>Use the reset button to clear the board and start over</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

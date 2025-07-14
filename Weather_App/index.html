@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App Indonesia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">🌤️ Weather Indonesia</h1>
+            <p class="subtitle">Monitor current weather conditions across Indonesia</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Search Section -->
+            <section class="search-section">
+                <div class="search-container">
+                    <div class="location-input">
+                        <input type="text" id="cityInput" placeholder="Enter city name..." class="city-input">
+                        <button id="searchBtn" class="search-btn">🔍 Search</button>
+                    </div>
+                    <button id="locationBtn" class="location-btn">📍 My Location</button>
+                </div>
+            </section>
+
+            <!-- Weather Display Section -->
+            <section class="weather-section">
+                <div class="weather-card" id="weatherCard">
+                    <div class="loading" id="loading">
+                        <div class="loader"></div>
+                        <p>Loading weather data...</p>
+                    </div>
+
+                    <div class="weather-content" id="weatherContent" style="display: none;">
+                        <!-- Current Weather -->
+                        <div class="current-weather">
+                            <div class="weather-main">
+                                <div class="weather-icon" id="weatherIcon">☀️</div>
+                                <div class="weather-info">
+                                    <h2 class="city-name" id="cityName">Jakarta</h2>
+                                    <p class="weather-description" id="weatherDesc">Clear</p>
+                                    <div class="temperature" id="temperature">28°C</div>
+                                </div>
+                            </div>
+                            <div class="weather-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Feels Like</span>
+                                    <span class="detail-value" id="feelsLike">30°C</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Humidity</span>
+                                    <span class="detail-value" id="humidity">65%</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Wind Speed</span>
+                                    <span class="detail-value" id="windSpeed">5 km/h</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Pressure</span>
+                                    <span class="detail-value" id="pressure">1013 hPa</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Visibility</span>
+                                    <span class="detail-value" id="visibility">10 km</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">UV Index</span>
+                                    <span class="detail-value" id="uvIndex">5</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Additional Info -->
+                        <div class="additional-info">
+                            <div class="info-card">
+                                <h3>🌅 Sun</h3>
+                                <div class="sun-info">
+                                    <div class="sun-item">
+                                        <span>Sunrise:</span>
+                                        <span id="sunrise">06:00</span>
+                                    </div>
+                                    <div class="sun-item">
+                                        <span>Sunset:</span>
+                                        <span id="sunset">18:00</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info-card">
+                                <h3>🌡️ Today's Temperature</h3>
+                                <div class="temp-range">
+                                    <div class="temp-item">
+                                        <span>Minimum:</span>
+                                        <span id="tempMin">22°C</span>
+                                    </div>
+                                    <div class="temp-item">
+                                        <span>Maximum:</span>
+                                        <span id="tempMax">32°C</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="error-message" id="errorMessage" style="display: none;">
+                        <div class="error-icon">❌</div>
+                        <h3>Oops! Something went wrong</h3>
+                        <p id="errorText">Unable to load weather data. Please try again.</p>
+                        <button id="retryBtn" class="retry-btn">Try Again</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 Weather App Indonesia. Data from OpenWeatherMap API.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
