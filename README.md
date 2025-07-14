@@ -197,11 +197,11 @@ npx http-server
 
 | Project | Demo Link |
 |---------|-----------|
-| Responsive Landing Page | [View Demo](https://codecraft-wd-01-flax.vercel.app/) |
-| Stopwatch App | [View Demo](https://codecraft-wd-01-vby9.vercel.app/) |
-| Tic-Tac-Toe | [View Demo](https://codecraft-wd-03-ivory.vercel.app/) |
-| Portfolio Website | [View Demo](https://codecraft-wd-04-nine.vercel.app/) |
-| Weather App | [View Demo](https://codecraft-wd-03-1lq7.vercel.app/) |
+| Responsive Landing Page | <a href="https://codecraft-wd-01-flax.vercel.app/" target="_blank" rel="noopener noreferrer">View Demo</a> |
+| Stopwatch App | <a href="https://codecraft-wd-01-vby9.vercel.app/" target="_blank" rel="noopener noreferrer">View Demo</a> |
+| Tic-Tac-Toe | <a href="https://codecraft-wd-03-ivory.vercel.app/" target="_blank" rel="noopener noreferrer">View Demo</a> |
+| Portfolio Website | <a href="https://codecraft-wd-04-nine.vercel.app/" target="_blank" rel="noopener noreferrer">View Demo</a> |
+| Weather App | <a href="https://codecraft-wd-03-1lq7.vercel.app/" target="_blank" rel="noopener noreferrer">View Demo</a> |
 
 ## 📚 Key Learning Outcomes
 
