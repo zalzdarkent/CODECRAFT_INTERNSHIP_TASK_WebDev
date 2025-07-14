@@ -173,7 +173,7 @@ A comprehensive weather application with real-time data and location services.
 1. **Clone the repository:**
 ```bash
 git clone <repository-url>
-cd CodeCraft-Linkedin-Portfolio
+cd CODECRAFT_INTERNSHIP_TASK_WebDev
 ```
 
 2. **For Next.js Portfolio:**
